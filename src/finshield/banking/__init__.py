@@ -1,0 +1,1 @@
+"""Banking core simulator module."""

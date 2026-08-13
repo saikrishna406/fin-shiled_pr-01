@@ -1,0 +1,59 @@
+Here is the exact step-by-step guide to run Fin-Shield Analytics from any new terminal:
+  ──────
+  ### Step 1: Open Terminal & Navigate to Project Directory
+
+    cd C:\fin-shiled
+  ──────
+  ### Step 2: Activate Virtual Environment
+
+  • PowerShell:
+    .venv\Scripts\Activate.ps1
+
+  • Command Prompt (CMD):
+    .venv\Scripts\activate.bat
+
+  ──────
+  ### Step 3: Set Python Path
+
+  • PowerShell:
+    $env:PYTHONPATH="src"
+
+  • Command Prompt (CMD):
+    set PYTHONPATH=src
+
+  ──────
+  ### Step 4: Run Fin-Shield CLI Commands
+
+  Here are all the available CLI commands you can run:
+
+  #### 1. Run Complete End-to-End Experiment Pipeline
+
+    python -m finshield.cli.main experiment
+
+  #### 2. Score a Single Transaction (Inference & Explainable Risk Decision)
+
+    # Low Risk / Normal Transaction
+    python -m finshield.cli.main infer --amount 250
+
+    # High Risk / Anomaly Transaction (New device + high amount)
+    python -m finshield.cli.main infer --amount 85000 --new-device
+
+  #### 3. Evaluate Machine Learning Models on PaySim Data
+
+    python -m finshield.cli.main evaluate
+
+  #### 4. Test VSLC Continuous Multilateral Netting & Settlement
+
+    python -m finshield.cli.main settle
+
+  #### 5. Verify Permissioned Ledger Hash Chain
+
+    python -m finshield.cli.main blockchain
+
+  #### 6. Check Intraday Liquidity Engine & Reserve Utilization
+
+    python -m finshield.cli.main liquidity
+
+  #### 7. Import PaySim Dataset
+
+    python -m finshield.cli.main paysim-import --input dataset.csv --max-rows 50000

@@ -1,0 +1,17 @@
+# Liquidity Engine & VSLC Configuration
+
+bank_reserves:
+  default_opening_reserve: 100000000.00   # 100M currency units
+  mandatory_reserve_rate: 0.10             # 10% liquidity hold
+  critical_reserve_threshold: 0.20        # Alert if reserve falls below 20% of opening
+
+vslc_netting:
+  default_window_ms: 500                    # 500ms continuous netting window
+  max_buffer_retention_seconds: 30          # Maximum time a transaction can remain buffered
+  min_compression_target: 0.25             # Target 25%+ liquidity savings via multilateral netting
+
+interbank:
+  participants:
+    - BANK_A
+    - BANK_B
+    - BANK_C

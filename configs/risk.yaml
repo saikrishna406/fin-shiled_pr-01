@@ -1,0 +1,19 @@
+# Risk Engine Configuration
+
+weights:
+  ml_supervised: 0.40      # XGBoost fraud probability weight
+  ml_anomaly: 0.25         # Isolation Forest anomaly score weight
+  ids_behavior: 0.20       # Transaction behavior IDS alert score weight
+  liquidity_stress: 0.15   # Bank reserve utilization/stress weight
+
+thresholds:
+  low_risk_max: 39          # 0-39: Express route to atomic settlement
+  medium_risk_max: 69       # 40-69: Dynamic buffer pool / additional checks
+  high_risk_max: 89         # 70-89: Dynamic buffer + review
+  critical_risk_min: 90     # 90-100: Reject or circuit breaker
+
+circuit_breaker:
+  enabled: true
+  ids_alert_rate_trigger: 0.30      # Trigger if 30% of stream alerts in window
+  max_buffered_transactions: 1000
+  latency_sla_ms: 100               # Deterministic fallback trigger if inference > 100ms

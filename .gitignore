@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project outputs & artifacts (keep structure via .gitkeep)
+artifacts/models/*
+artifacts/preprocessing/*
+datasets/*
+!datasets/.gitkeep
+!artifacts/models/.gitkeep
+!artifacts/preprocessing/.gitkeep
+results/metrics/*
+results/predictions/*
+results/plots/*
+results/ledgers/*
+!results/metrics/.gitkeep
+!results/predictions/.gitkeep
+!results/plots/.gitkeep
+!results/ledgers/.gitkeep
+
+# Temporary & extracted files
+PRD_extracted.txt
+scratch/
+git/
+mingit.zip
+dataset.csv
